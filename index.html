@@ -351,7 +351,7 @@
                 <div class="card-header">
                     <div class="card-title">Input Terms</div>
                     <div class="btn-group">
-                        <button class="btn btn-outline btn-sm">Examples</button>
+                        <button class="btn btn-outline btn-sm" onclick="ccp.loadExamples()">Examples</button>
                         <button class="btn btn-primary btn-sm" onclick="applyTerms()">Process Terms</button>
                     </div>
                 </div>
@@ -371,8 +371,8 @@ calculateCircleArea"></textarea>
                         <div class="term-list" id="autoTermsList">
                             <!-- Auto-generated terms will appear here -->
                             <div class="term-item">
-                                <span class="term-original">Processing terms...</span>
-                                <span class="term-abbr">Will appear here</span>
+                                <span class="term-original">Enter terms and click "Process Terms"</span>
+                                <span class="term-abbr">Abbreviations will appear here</span>
                             </div>
                         </div>
                     </div>
@@ -405,7 +405,17 @@ calculateCircleArea"></textarea>
                     </div>
                     
                     <div id="input-tab" class="tab-content active">
-                        <textarea id="codeInput" placeholder="Paste your JavaScript code here..."></textarea>
+                        <textarea id="codeInput" placeholder="Paste your JavaScript code here...">function calculateCircleArea(radius) {
+    const minCircleRadius = 5;
+    const maxCircleRadius = 100;
+    const defaultCircleRadius = 10;
+    
+    if (radius < minCircleRadius || radius > maxCircleRadius) {
+        radius = defaultCircleRadius;
+    }
+    
+    return Math.PI * radius * radius;
+}</textarea>
                     </div>
                     
                     <div id="output-tab" class="tab-content">
@@ -413,7 +423,7 @@ calculateCircleArea"></textarea>
                     </div>
                     
                     <div class="btn-group" style="margin-top: 1rem;">
-                        <button class="btn btn-outline">Copy</button>
+                        <button class="btn btn-outline" onclick="copyOutput()">Copy</button>
                         <button class="btn btn-outline">Download</button>
                         <button class="btn btn-primary">Save Project</button>
                     </div>
@@ -448,7 +458,7 @@ calculateCircleArea"></textarea>
         </div>
         
         <footer>
-            <p>CodeCondense Pro v1.0 · © 2023 · All rights reserved</p>
+            <p>CodeCondense Pro v1.2 · © 2025 · All rights reserved</p>
         </footer>
     </div>
 
@@ -515,7 +525,7 @@ calculateCircleArea"></textarea>
                     let prefix = '';
                     if (this.settings.ignoreCommon) {
                         for (const common of commonPrefixes) {
-                            if (firstPart.startsWith(common) {
+                            if (firstPart.startsWith(common)) {
                                 prefix = common;
                                 break;
                             }
@@ -691,6 +701,20 @@ calculateCircleArea"></textarea>
 
         function processCode() {
             ccp.processCode();
+        }
+
+        function copyOutput() {
+            const output = document.getElementById('codeOutput');
+            output.select();
+            document.execCommand('copy');
+            
+            // Show feedback
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
         }
 
         // Initialize with examples
