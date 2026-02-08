@@ -1,4 +1,4 @@
-**CodeCondense Pro** is a developer tool designed to **shorten JavaScript code** by renaming long, descriptive variables and functions into tiny, abbreviated versions.
+**[CodeCondense Pro](https://dxxthly.github.io/CodeCondensePro/)** is a developer tool designed to **shorten JavaScript code** by renaming long, descriptive variables and functions into tiny, abbreviated versions.
 
 Think of it as a "Manual Minifier." While standard tools (like Terser or Uglify) do this automatically and make the code unreadable, this tool gives you control over exactly how your terms are shortened.
 
