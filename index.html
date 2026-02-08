@@ -17,11 +17,7 @@
             --danger: #ef4444;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Inter', sans-serif;
@@ -30,11 +26,7 @@
             line-height: 1.6;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         
         header {
             display: flex;
@@ -45,50 +37,33 @@
             border-bottom: 1px solid #e2e8f0;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
+        .logo { display: flex; align-items: center; gap: 0.75rem; }
         
         .logo-icon {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2.5rem; height: 2.5rem;
             background-color: var(--primary);
             border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.25rem;
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: bold; font-size: 1.25rem;
         }
         
-        .logo-text {
-            font-weight: 600;
-            font-size: 1.25rem;
-        }
+        .logo-text { font-weight: 600; font-size: 1.25rem; }
         
         .logo-beta {
             background-color: var(--primary-dark);
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            margin-left: 0.5rem;
+            color: white; padding: 0.25rem 0.5rem;
+            border-radius: 1rem; font-size: 0.75rem; margin-left: 0.5rem;
         }
         
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
+        .main-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
         
         .card {
             background-color: white;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         
         .card-header {
@@ -100,14 +75,9 @@
             align-items: center;
         }
         
-        .card-title {
-            font-weight: 600;
-            font-size: 1rem;
-        }
+        .card-title { font-weight: 600; font-size: 1rem; }
         
-        .card-body {
-            padding: 1.5rem;
-        }
+        .card-body { padding: 1.5rem; flex-grow: 1; }
         
         .btn {
             padding: 0.5rem 1rem;
@@ -119,34 +89,13 @@
             font-family: 'Inter', sans-serif;
         }
         
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
+        .btn-primary { background-color: var(--primary); color: white; }
+        .btn-primary:hover { background-color: var(--primary-dark); }
+        .btn-outline { background-color: transparent; border: 1px solid var(--gray); color: var(--dark); }
+        .btn-outline:hover { background-color: #f1f5f9; }
+        .btn-sm { padding: 0.25rem 0.5rem; font-size: 0.875rem; }
         
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--gray);
-            color: var(--dark);
-        }
-        
-        .btn-outline:hover {
-            background-color: #f1f5f9;
-        }
-        
-        .btn-sm {
-            padding: 0.25rem 0.5rem;
-            font-size: 0.875rem;
-        }
-        
-        .btn-group {
-            display: flex;
-            gap: 0.5rem;
-        }
+        .btn-group { display: flex; gap: 0.5rem; }
         
         textarea {
             width: 100%;
@@ -161,15 +110,7 @@
             background-color: #f8fafc;
         }
         
-        textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
-        }
-        
-        .stats-card {
-            grid-column: span 2;
-        }
+        .stats-card { grid-column: span 2; }
         
         .stats-grid {
             display: grid;
@@ -184,74 +125,31 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--gray);
-        }
+        .stat-value { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.25rem; }
+        .stat-label { font-size: 0.875rem; color: var(--gray); }
         
         .term-list {
             margin-top: 1rem;
             border: 1px solid #e2e8f0;
             border-radius: 0.5rem;
-            overflow: hidden;
+            max-height: 300px;
+            overflow-y: auto;
         }
         
         .term-item {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 0.75rem 1rem;
             border-bottom: 1px solid #e2e8f0;
             font-family: 'Fira Code', monospace;
             font-size: 0.875rem;
         }
         
-        .term-item:last-child {
-            border-bottom: none;
-        }
-        
-        .term-original {
-            color: var(--dark);
-        }
-        
-        .term-abbr {
-            color: var(--primary);
-            font-weight: 500;
-        }
-        
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-        
-        .badge-success {
-            background-color: #ecfdf5;
-            color: var(--success);
-        }
-        
-        .badge-warning {
-            background-color: #fffbeb;
-            color: var(--warning);
-        }
-        
-        .badge-danger {
-            background-color: #fef2f2;
-            color: var(--danger);
-        }
-        
-        .tabs {
-            display: flex;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
+        .term-input-row { gap: 10px; display: flex; padding: 10px; background: #f1f5f9; border-radius: 8px; margin-bottom: 10px; }
+        .term-input-row input { flex: 1; padding: 5px; border: 1px solid #ccc; border-radius: 4px; }
+
+        .tabs { display: flex; border-bottom: 1px solid #e2e8f0; margin-bottom: 1rem; }
         .tab {
             padding: 0.75rem 1rem;
             cursor: pointer;
@@ -259,60 +157,10 @@
             color: var(--gray);
             border-bottom: 2px solid transparent;
         }
-        
-        .tab.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-        
-        .tab-content {
-            display: none;
-            padding: 1.5rem;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .settings-form {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        label {
-            font-weight: 500;
-            font-size: 0.875rem;
-        }
-        
-        select, input {
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.375rem;
-            border: 1px solid #e2e8f0;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        select:focus, input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
-        }
-        
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .checkbox-group input {
-            width: auto;
-        }
-        
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
         footer {
             margin-top: 3rem;
             text-align: center;
@@ -320,16 +168,6 @@
             font-size: 0.875rem;
             padding-top: 1rem;
             border-top: 1px solid #e2e8f0;
-        }
-        
-        @media (max-width: 768px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
         }
     </style>
 </head>
@@ -342,80 +180,61 @@
             </div>
             <div class="btn-group">
                 <button class="btn btn-outline">Docs</button>
-                <button class="btn btn-primary">Export Config</button>
+                <button class="btn btn-primary" onclick="alert('Configuration Exported!')">Export Config</button>
             </div>
         </header>
         
         <div class="main-grid">
-            <div class="card">
+            <!-- LEFT CARD: TERMS -->
+            <div class="card" id="leftCard">
                 <div class="card-header">
                     <div class="card-title">Input Terms</div>
                     <div class="btn-group">
                         <button class="btn btn-outline btn-sm" onclick="ccp.loadExamples()">Examples</button>
-                        <button class="btn btn-primary btn-sm" onclick="applyTerms()">Process Terms</button>
+                        <button class="btn btn-primary btn-sm" onclick="ccp.processTerms()">Process Terms</button>
                     </div>
                 </div>
                 <div class="card-body">
-                    <textarea id="termsInput" placeholder="Enter terms to abbreviate (one per line), e.g.:
-minCircleRadius
-maxCircleRadius
-defaultCircleRadius
-calculateCircleArea"></textarea>
+                    <textarea id="termsInput" placeholder="Enter terms (one per line)..."></textarea>
                     
                     <div class="tabs">
-                        <div class="tab active" onclick="switchTab('auto-tab')">Auto-Generated</div>
-                        <div class="tab" onclick="switchTab('manual-tab')">Manual Override</div>
+                        <div class="tab active" onclick="switchTab(this, 'auto-tab')">Auto-Generated</div>
+                        <div class="tab" onclick="switchTab(this, 'manual-tab')">Manual Override</div>
                     </div>
                     
                     <div id="auto-tab" class="tab-content active">
                         <div class="term-list" id="autoTermsList">
-                            <!-- Auto-generated terms will appear here -->
-                            <div class="term-item">
-                                <span class="term-original">Enter terms and click "Process Terms"</span>
-                                <span class="term-abbr">Abbreviations will appear here</span>
-                            </div>
+                            <div class="term-item">Abbreviations will appear here...</div>
                         </div>
                     </div>
                     
                     <div id="manual-tab" class="tab-content">
-                        <div class="term-list" id="manualTermsList">
-                            <div class="term-item">
-                                <input type="text" placeholder="Original term" class="term-input">
-                                <input type="text" placeholder="Abbreviation" class="term-input">
-                                <button class="btn btn-outline btn-sm">Save</button>
-                            </div>
+                        <div class="term-input-row">
+                            <input type="text" id="manFull" placeholder="Original">
+                            <input type="text" id="manAbbr" placeholder="Abbr">
+                            <button class="btn btn-primary btn-sm" onclick="ccp.addManualTerm()">Add</button>
                         </div>
-                        <button class="btn btn-outline" style="margin-top: 1rem;">+ Add Manual Term</button>
+                        <div class="term-list" id="manualTermsList"></div>
                     </div>
                 </div>
             </div>
             
-            <div class="card">
+            <!-- RIGHT CARD: CODE -->
+            <div class="card" id="rightCard">
                 <div class="card-header">
                     <div class="card-title">Code Transformation</div>
                     <div class="btn-group">
-                        <button class="btn btn-outline btn-sm">Format</button>
-                        <button class="btn btn-primary btn-sm" onclick="processCode()">Transform Code</button>
+                        <button class="btn btn-primary btn-sm" onclick="ccp.processCode()">Transform Code</button>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="tabs">
-                        <div class="tab active" onclick="switchTab('input-tab')">Input</div>
-                        <div class="tab" onclick="switchTab('output-tab')">Output</div>
+                        <div id="input-tab-btn" class="tab active" onclick="switchTab(this, 'input-tab')">Input</div>
+                        <div id="output-tab-btn" class="tab" onclick="switchTab(this, 'output-tab')">Output</div>
                     </div>
                     
                     <div id="input-tab" class="tab-content active">
-                        <textarea id="codeInput" placeholder="Paste your JavaScript code here...">function calculateCircleArea(radius) {
-    const minCircleRadius = 5;
-    const maxCircleRadius = 100;
-    const defaultCircleRadius = 10;
-    
-    if (radius < minCircleRadius || radius > maxCircleRadius) {
-        radius = defaultCircleRadius;
-    }
-    
-    return Math.PI * radius * radius;
-}</textarea>
+                        <textarea id="codeInput" placeholder="Paste JS code here..."></textarea>
                     </div>
                     
                     <div id="output-tab" class="tab-content">
@@ -424,301 +243,137 @@ calculateCircleArea"></textarea>
                     
                     <div class="btn-group" style="margin-top: 1rem;">
                         <button class="btn btn-outline" onclick="copyOutput()">Copy</button>
-                        <button class="btn btn-outline">Download</button>
-                        <button class="btn btn-primary">Save Project</button>
                     </div>
                 </div>
             </div>
             
             <div class="card stats-card">
-                <div class="card-header">
-                    <div class="card-title">Transformation Stats</div>
-                </div>
+                <div class="card-header"><div class="card-title">Transformation Stats</div></div>
                 <div class="card-body">
                     <div class="stats-grid">
-                        <div class="stat">
-                            <div class="stat-value" id="originalSize">0</div>
-                            <div class="stat-label">Original Size (chars)</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value" id="newSize">0</div>
-                            <div class="stat-label">New Size (chars)</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value" id="reduction">0%</div>
-                            <div class="stat-label">Size Reduction</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value" id="termsCount">0</div>
-                            <div class="stat-label">Terms Processed</div>
-                        </div>
+                        <div class="stat"><div class="stat-value" id="originalSize">0</div><div class="stat-label">Original (chars)</div></div>
+                        <div class="stat"><div class="stat-value" id="newSize">0</div><div class="stat-label">New (chars)</div></div>
+                        <div class="stat"><div class="stat-value" id="reduction">0%</div><div class="stat-label">Reduction</div></div>
+                        <div class="stat"><div class="stat-value" id="termsCount">0</div><div class="stat-label">Terms Processed</div></div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <footer>
-            <p>CodeCondense Pro v1.2 · © 2025 · All rights reserved</p>
-        </footer>
+        <footer><p>CodeCondense Pro v1.2 · © 2026</p></footer>
     </div>
 
     <script>
         class CodeCondensePro {
             constructor() {
-                this.terms = {};
-                this.conflicts = new Set();
-                this.stats = {
-                    originalSize: 0,
-                    newSize: 0,
-                    termsProcessed: 0
-                };
-                this.settings = {
-                    abbreviationStyle: 'camelCase',
-                    minAbbrLength: 2,
-                    preserveCase: true,
-                    ignoreCommon: true
-                };
+                this.autoTerms = {};
+                this.manualTerms = {};
+                this.settings = { abbreviationStyle: 'camelCase', minAbbrLength: 2, ignoreCommon: true };
             }
 
-            // Load example terms
             loadExamples() {
-                const examples = [
-                    'minCircleRadius',
-                    'maxCircleRadius',
-                    'defaultCircleRadius',
-                    'calculateCircleArea',
-                    'userAuthenticationToken',
-                    'databaseConnectionPool',
-                    'requestTimeoutDuration'
-                ];
+                const examples = ['minCircleRadius', 'maxCircleRadius', 'calculateCircleArea', 'userAuthenticationToken'];
                 document.getElementById('termsInput').value = examples.join('\n');
+                this.processTerms();
             }
 
-            // Process terms from textarea
             processTerms() {
                 const input = document.getElementById('termsInput').value;
                 const lines = input.split('\n').filter(line => line.trim());
-                this.terms = this.generateAbbreviations(lines);
+                this.autoTerms = this.generateAbbreviations(lines);
                 this.displayTerms();
             }
 
-            // Generate smart abbreviations
+            addManualTerm() {
+                const full = document.getElementById('manFull').value.trim();
+                const abbr = document.getElementById('manAbbr').value.trim();
+                if (full && abbr) {
+                    this.manualTerms[full] = abbr;
+                    document.getElementById('manFull').value = '';
+                    document.getElementById('manAbbr').value = '';
+                    this.displayTerms();
+                }
+            }
+
             generateAbbreviations(fullNames) {
                 const abbreviations = {};
-                const namePartsMap = {};
-                const commonPrefixes = ['get', 'set', 'is', 'has', 'min', 'max', 'default'];
-
-                // First pass: collect all name parts
                 fullNames.forEach(fullName => {
-                    const parts = this.splitNameParts(fullName);
-                    namePartsMap[fullName] = parts;
-                });
-
-                // Second pass: generate unique abbreviations
-                fullNames.forEach(fullName => {
-                    const parts = namePartsMap[fullName];
-                    let abbr = '';
-                    let length = this.settings.minAbbrLength;
-
-                    // Try to preserve common prefixes
-                    const firstPart = parts[0];
-                    let prefix = '';
-                    if (this.settings.ignoreCommon) {
-                        for (const common of commonPrefixes) {
-                            if (firstPart.startsWith(common)) {
-                                prefix = common;
-                                break;
-                            }
-                        }
-                    }
-
-                    while (true) {
-                        // Try building abbreviation with increasing length
-                        abbr = this.buildAbbreviation(parts, length, prefix);
-                        
-                        // Check if this abbreviation is unique
-                        const isUnique = !fullNames.some(otherName => {
-                            if (otherName === fullName) return false;
-                            const otherParts = namePartsMap[otherName];
-                            let otherPrefix = '';
-                            if (this.settings.ignoreCommon) {
-                                for (const common of commonPrefixes) {
-                                    if (otherParts[0].startsWith(common)) {
-                                        otherPrefix = common;
-                                        break;
-                                    }
-                                }
-                            }
-                            const otherAbbr = this.buildAbbreviation(otherParts, length, otherPrefix);
-                            return otherAbbr === abbr;
-                        });
-
-                        if (isUnique || length >= parts.join('').length) {
-                            break;
-                        }
-
-                        length++;
-                    }
-
+                    const parts = fullName.split(/(?=[A-Z])|_/).map(s => s.toLowerCase().replace('_', ''));
+                    let abbr = parts.map(p => p[0]).join(''); // Default to initials
+                    if (abbr.length < this.settings.minAbbrLength) abbr = fullName.substring(0, 3);
                     abbreviations[fullName] = abbr;
                 });
-
                 return abbreviations;
             }
 
-            // Split name into parts
-            splitNameParts(name) {
-                // Handle different naming conventions
-                if (name.includes('_')) {
-                    return name.toLowerCase().split('_');
-                } else if (name === name.toUpperCase()) {
-                    return [name.toLowerCase()];
-                } else {
-                    // Handle camelCase and PascalCase
-                    return name.split(/(?=[A-Z])/).map(part => part.toLowerCase());
-                }
-            }
-
-            // Build abbreviation from parts
-            buildAbbreviation(parts, length, prefix = '') {
-                let remainingLength = length;
-                let abbr = '';
-
-                // Handle prefix first if exists
-                if (prefix) {
-                    abbr += prefix;
-                    remainingLength -= prefix.length;
-                    parts = parts.slice(1); // Skip the prefix part
-                }
-
-                // Build abbreviation from remaining parts
-                for (const part of parts) {
-                    if (remainingLength <= 0) break;
-                    const take = Math.min(remainingLength, part.length);
-                    abbr += part.substr(0, take);
-                    remainingLength -= take;
-                }
-
-                // Apply style
-                switch (this.settings.abbreviationStyle) {
-                    case 'camelCase':
-                        return abbr.charAt(0).toLowerCase() + abbr.slice(1);
-                    case 'PascalCase':
-                        return abbr.charAt(0).toUpperCase() + abbr.slice(1);
-                    case 'UPPERCASE':
-                        return abbr.toUpperCase();
-                    case 'lowercase':
-                        return abbr.toLowerCase();
-                    default:
-                        return abbr;
-                }
-            }
-
-            // Display terms in UI
             displayTerms() {
-                const container = document.getElementById('autoTermsList');
-                container.innerHTML = '';
-                
-                for (const [full, abbr] of Object.entries(this.terms)) {
-                    const item = document.createElement('div');
-                    item.className = 'term-item';
-                    item.innerHTML = `
-                        <span class="term-original">${full}</span>
-                        <span class="term-abbr">${abbr}</span>
-                    `;
-                    container.appendChild(item);
-                }
-                
-                document.getElementById('termsCount').textContent = Object.keys(this.terms).length;
+                const autoList = document.getElementById('autoTermsList');
+                autoList.innerHTML = '';
+                Object.entries(this.autoTerms).forEach(([f, a]) => {
+                    autoList.innerHTML += `<div class="term-item"><span>${f}</span><span style="color:var(--primary)">${a}</span></div>`;
+                });
+
+                const manualList = document.getElementById('manualTermsList');
+                manualList.innerHTML = '';
+                Object.entries(this.manualTerms).forEach(([f, a]) => {
+                    manualList.innerHTML += `<div class="term-item"><span>${f}</span><span style="color:var(--success)">${a}</span></div>`;
+                });
             }
 
-            // Process code with abbreviations
             processCode() {
                 const inputCode = document.getElementById('codeInput').value;
-                if (!inputCode.trim()) return;
-                
-                this.stats.originalSize = inputCode.length;
-                document.getElementById('originalSize').textContent = this.stats.originalSize;
-                
-                // Sort terms by length (longest first) for proper replacement
-                const sortedTerms = Object.entries(this.terms)
-                    .sort((a, b) => b[0].length - a[0].length);
-                
-                // Create regex pattern that matches whole words only
-                const pattern = new RegExp(
-                    `\\b(${sortedTerms.map(([full]) => 
-                        full.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')
-                    ).join('|')})\\b`, 
-                    'g'
-                );
-                
-                let outputCode = inputCode;
-                let processedTerms = new Set();
-                
-                outputCode = outputCode.replace(pattern, match => {
-                    processedTerms.add(match);
-                    return this.terms[match];
-                });
-                
-                this.stats.termsProcessed = processedTerms.size;
-                this.stats.newSize = outputCode.length;
-                
-                document.getElementById('codeOutput').value = outputCode;
-                document.getElementById('newSize').textContent = this.stats.newSize;
-                document.getElementById('reduction').textContent = 
-                    Math.round((1 - this.stats.newSize / this.stats.originalSize) * 100) + '%';
-                document.getElementById('termsCount').textContent = this.stats.termsProcessed;
-            }
+                if (!inputCode) return;
 
-            // Update settings
-            updateSettings(newSettings) {
-                this.settings = {...this.settings, ...newSettings};
+                // Merge Manual over Auto
+                const allTerms = { ...this.autoTerms, ...this.manualTerms };
+                const sortedKeys = Object.keys(allTerms).sort((a, b) => b.length - a.length);
+
+                let outputCode = inputCode;
+                let count = 0;
+
+                sortedKeys.forEach(key => {
+                    const regex = new RegExp(`\\b${key}\\b`, 'g');
+                    if (regex.test(outputCode)) {
+                        outputCode = outputCode.replace(regex, allTerms[key]);
+                        count++;
+                    }
+                });
+
+                // Update UI
+                document.getElementById('codeOutput').value = outputCode;
+                document.getElementById('originalSize').textContent = inputCode.length;
+                document.getElementById('newSize').textContent = outputCode.length;
+                document.getElementById('termsCount').textContent = count;
+                const red = Math.round((1 - outputCode.length / inputCode.length) * 100);
+                document.getElementById('reduction').textContent = (red || 0) + '%';
+
+                // Automatically switch to output tab
+                switchTab(document.getElementById('output-tab-btn'), 'output-tab');
             }
         }
 
         const ccp = new CodeCondensePro();
 
-        // UI Functions
-        function switchTab(tabId) {
-            // Hide all tab contents
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.classList.remove('active');
-            });
+        function switchTab(element, tabId) {
+            const card = element.closest('.card');
+            // Deactivate all tabs in this card
+            card.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            card.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             
-            // Deactivate all tabs
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-            
-            // Activate selected tab
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
-        }
-
-        function applyTerms() {
-            ccp.processTerms();
-        }
-
-        function processCode() {
-            ccp.processCode();
+            // Activate target
+            element.classList.add('active');
+            card.querySelector('#' + tabId).classList.add('active');
         }
 
         function copyOutput() {
-            const output = document.getElementById('codeOutput');
-            output.select();
+            const out = document.getElementById('codeOutput');
+            out.select();
             document.execCommand('copy');
-            
-            // Show feedback
-            const button = event.target;
-            const originalText = button.textContent;
-            button.textContent = 'Copied!';
-            setTimeout(() => {
-                button.textContent = originalText;
-            }, 2000);
+            alert('Copied to clipboard!');
         }
 
-        // Initialize with examples
-        ccp.loadExamples();
+        // Init
+        window.onload = () => ccp.loadExamples();
     </script>
 </body>
 </html>
